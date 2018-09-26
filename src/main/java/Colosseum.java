@@ -73,8 +73,19 @@ public class Colosseum {
      */
     public static Pokemon buildPokemon() {
         Pokemon tempPokemon = new Pokemon();
+        int point = tempPokemon.hitPoints;
+        if (point < 1 || point > MAX_HIT_POINTS) {
+            System.out.println("Sorry. Hit points must be between 1 and 50");
+        } else {
+            for (int i = 0; i < MAX_HIT_POINTS; i++) {
+                if (tempPokemon.hitPoints > point) {
+                    return tempPokemon;
+                }
+            }
+        }
         return tempPokemon;
     }
+
 
     /**
      * Prints who is ahead.
